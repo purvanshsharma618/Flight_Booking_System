@@ -10,20 +10,26 @@
         <module name="ConfigServer" />
         <module name="Service-Registry" />
       </profile>
-      <profile name="Annotation profile for CheckIn-Service" enabled="true">
+      <profile name="Annotation profile for BookingService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="Booking-Service" />
+        <module name="Flight-service" />
+        <module name="Check-in-service" />
         <module name="User-Service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Booking-Service" options="-parameters" />
+      <module name="Check-in-service" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
+      <module name="Flight-service" options="-parameters" />
       <module name="Service-Registry" options="-parameters" />
       <module name="User-Service" options="-parameters" />
     </option>
